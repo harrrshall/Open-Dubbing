@@ -1,6 +1,6 @@
 # Open-Dub: Automated English Dubbing from YouTube Videos
 
-This project automates the creation of podcasts from YouTube videos. It downloads the video and audio, transcribes the audio, generates dubbed audio using a lightweight model (Kokoro-82M) that runs on a standard laptop, and then combines the video with the dubbed audio to produce a final podcast.
+This project automates the creation of english dubbed from YouTube videos. It downloads the video and audio, transcribes the audio, generates dubbed audio using a lightweight model (Kokoro-82M) that runs on a standard laptop, and then combines the video with the dubbed audio to produce a final Dubbed.
 
 ## Features
 
@@ -25,8 +25,8 @@ Before you begin, ensure you have the following installed:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/YOUR_GITHUB_USERNAME/harrrshall-open-podcast.git  # Replace with your repo URL
-    cd harrrshall-open-podcast
+    git clone https://github.com/YOUR_GITHUB_USERNAME/harrrshall-open-Dubbed.git  # Replace with your repo URL
+    cd harrrshall-open-Dubbed
     ```
 
 2.  **Create a virtual environment (recommended):**
@@ -102,7 +102,7 @@ Before you begin, ensure you have the following installed:
     *   Transcribe the audio using AssemblyAI.
     *   Generate dubbed audio using Kokoro.
     *   Combine the video and dubbed audio.
-    *   Save the final podcast video to a file named after the YouTube channel (e.g., `CHANNEL_NAME.mp4`). A counter will be appended to the filename if a file with the same name already exists.
+    *   Save the final Dubbed video to a file named after the YouTube channel (e.g., `CHANNEL_NAME.mp4`). A counter will be appended to the filename if a file with the same name already exists.
     *   Delete temporary files.
 
 ## Example
@@ -113,7 +113,7 @@ To process the YouTube video at `https://youtu.be/Zg5YueS8em4?si=K_Y_3NMr0xLCOcU
 python3 main.py "https://youtu.be/Zg5YueS8em4?si=K_Y_3NMr0xLCOcU5"
 
 
-This will create a podcast video file (e.g., YouTubeChannelName.mp4) in the current directory.
+This will create a Dubbed video file (e.g., YouTubeChannelName.mp4) in the current directory.
 
 Script Descriptions
 
@@ -121,11 +121,11 @@ README.md: This file.
 
 combine_media.sh: Shell script to combine video and audio using ffmpeg.
 
-email.py: (Placeholder) Intended for emailing processed podcasts, but currently unimplemented.
+email.py: (Placeholder) Intended for emailing processed Dubbeds, but currently unimplemented.
 
-main.py: Main script that drives the entire podcast generation process. Handles URL processing, parallel downloading, transcription, dubbing, and media combination.
+main.py: Main script that drives the entire Dubbed generation process. Handles URL processing, parallel downloading, transcription, dubbing, and media combination.
 
-podcast.ipynb: Jupyter Notebook (converted to Python script) that contains code for text-to-speech using the Kokoro model. This is integrated into video_dub.py.
+Dubbed.ipynb: Jupyter Notebook (converted to Python script) that contains code for text-to-speech using the Kokoro model. This is integrated into video_dub.py.
 
 requirements.txt: List of Python packages required for the project.
 
@@ -153,7 +153,7 @@ Audio/Video Combination Problems: Verify that the input video and audio files ex
 
 Future Enhancements
 
-Implement email functionality in email.py: Automatically send the generated podcast to a list of email addresses.
+Implement email functionality in email.py: Automatically send the generated Dubbed to a list of email addresses.
 
 Add more robust error handling: Improve error handling and logging for easier debugging.
 
@@ -161,9 +161,9 @@ GUI Interface: Develop a graphical user interface (GUI) for easier interaction.
 
 Advanced Speaker Configuration: Allow for more granular control over speaker voices, intonation, and pauses.
 
-Cloud Deployment: Deploy the podcast generation pipeline to a cloud platform (e.g., AWS, Google Cloud) for scalability.
+Cloud Deployment: Deploy the Dubbed generation pipeline to a cloud platform (e.g., AWS, Google Cloud) for scalability.
 
-Silence Detection and Removal: Implement automatic silence detection and removal to improve the audio quality of the dubbed podcast.
+Silence Detection and Removal: Implement automatic silence detection and removal to improve the audio quality of the dubbed Dubbed.
 
 Support for other TTS engines: Integrate support for other Text-to-Speech (TTS) engines besides Kokoro.
 
