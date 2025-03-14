@@ -105,80 +105,62 @@ Before you begin, ensure you have the following installed:
     *   Save the final Dubbed video to a file named after the YouTube channel (e.g., `CHANNEL_NAME.mp4`). A counter will be appended to the filename if a file with the same name already exists.
     *   Delete temporary files.
 
+```markdown
 ## Example
 
 To process the YouTube video at `https://youtu.be/Zg5YueS8em4?si=K_Y_3NMr0xLCOcU5`:
 
 ```bash
 python3 main.py "https://youtu.be/Zg5YueS8em4?si=K_Y_3NMr0xLCOcU5"
+```
 
+This will create a podcast video file (e.g., `YouTubeChannelName.mp4`) in the current directory.
 
-This will create a Dubbed video file (e.g., YouTubeChannelName.mp4) in the current directory.
+## Script Descriptions
 
-Script Descriptions
+*   **`README.md`:** This file.
+*   **`combine_media.sh`:** Shell script to combine video and audio using `ffmpeg`.
+*   **`email.py`:** (Placeholder) Intended for emailing processed podcasts, but currently unimplemented.
+*   **`main.py`:** Main script that drives the entire podcast generation process. Handles URL processing, parallel downloading, transcription, dubbing, and media combination.
+*   **`podcast.ipynb`:** Jupyter Notebook (converted to Python script) that contains code for text-to-speech using the Kokoro model. This is integrated into `video_dub.py`.
+*   **`requirements.txt`:** List of Python packages required for the project.
+*   **`transcribe.py`:** Transcribes audio using AssemblyAI (saves full transcript with speaker labels).
+*   **`transcribe_audio.py`:** Transcribes audio using AssemblyAI, specifically tailored for dubbing with word-level timestamps.
+*   **`video_dub.py`:** Generates dubbed audio from a transcription JSON file, using the Kokoro TTS model. Includes speaker configuration, pause handling, and audio normalization.
+*   **`yt_audio.py`:** Downloads audio from a YouTube video using `yt-dlp`.
+*   **`yt_video.py`:** Downloads video (without audio) from a YouTube video using `yt-dlp`.
 
-README.md: This file.
+## Troubleshooting
 
-combine_media.sh: Shell script to combine video and audio using ffmpeg.
+*   **`ffmpeg` or `yt-dlp not found`:** Ensure `ffmpeg` and `yt-dlp` are installed and in your system's PATH. You can verify this by running `ffmpeg -version` and `yt-dlp --version` in your terminal.
+*   **Transcription Errors:** Check your AssemblyAI API key and ensure your account has sufficient credits. Also, verify the audio quality of the YouTube video.
+*   **Dubbing Issues:** Ensure speaker configurations in `video_dub.py` are correct and that the voice IDs are valid. If speech sounds unnatural, adjust the `speed` parameter.
+*   **Kokoro Issues:** This project uses a specific version of `kokoro` (0.8.4). Be sure that you have the correct version, as other versions might not be compatible.
+*   **Audio/Video Combination Problems:** Verify that the input video and audio files exist and are valid.
 
-email.py: (Placeholder) Intended for emailing processed Dubbeds, but currently unimplemented.
+## Future Enhancements
 
-main.py: Main script that drives the entire Dubbed generation process. Handles URL processing, parallel downloading, transcription, dubbing, and media combination.
+*   **Implement email functionality in `email.py`:** Automatically send the generated podcast to a list of email addresses.
+*   **Add more robust error handling:** Improve error handling and logging for easier debugging.
+*   **GUI Interface:** Develop a graphical user interface (GUI) for easier interaction.
+*   **Advanced Speaker Configuration:** Allow for more granular control over speaker voices, intonation, and pauses.
+*   **Cloud Deployment:** Deploy the podcast generation pipeline to a cloud platform (e.g., AWS, Google Cloud) for scalability.
+*   **Silence Detection and Removal:** Implement automatic silence detection and removal to improve the audio quality of the dubbed podcast.
+*   **Support for other TTS engines:** Integrate support for other Text-to-Speech (TTS) engines besides Kokoro.
+*   **Dynamic Speed Adjustment:** Implement logic to dynamically adjust speech speed based on the complexity of the sentence to improve the audio synchronization.
 
-Dubbed.ipynb: Jupyter Notebook (converted to Python script) that contains code for text-to-speech using the Kokoro model. This is integrated into video_dub.py.
-
-requirements.txt: List of Python packages required for the project.
-
-transcribe.py: Transcribes audio using AssemblyAI (saves full transcript with speaker labels).
-
-transcribe_audio.py: Transcribes audio using AssemblyAI, specifically tailored for dubbing with word-level timestamps.
-
-video_dub.py: Generates dubbed audio from a transcription JSON file, using the Kokoro TTS model. Includes speaker configuration, pause handling, and audio normalization.
-
-yt_audio.py: Downloads audio from a YouTube video using yt-dlp.
-
-yt_video.py: Downloads video (without audio) from a YouTube video using yt-dlp.
-
-Troubleshooting
-
-ffmpeg or yt-dlp not found: Ensure ffmpeg and yt-dlp are installed and in your system's PATH. You can verify this by running ffmpeg -version and yt-dlp --version in your terminal.
-
-Transcription Errors: Check your AssemblyAI API key and ensure your account has sufficient credits. Also, verify the audio quality of the YouTube video.
-
-Dubbing Issues: Ensure speaker configurations in video_dub.py are correct and that the voice IDs are valid. If speech sounds unnatural, adjust the speed parameter.
-
-Kokoro Issues: This project uses a specific version of kokoro (0.8.4). Be sure that you have the correct version, as other versions might not be compatible.
-
-Audio/Video Combination Problems: Verify that the input video and audio files exist and are valid.
-
-Future Enhancements
-
-Implement email functionality in email.py: Automatically send the generated Dubbed to a list of email addresses.
-
-Add more robust error handling: Improve error handling and logging for easier debugging.
-
-GUI Interface: Develop a graphical user interface (GUI) for easier interaction.
-
-Advanced Speaker Configuration: Allow for more granular control over speaker voices, intonation, and pauses.
-
-Cloud Deployment: Deploy the Dubbed generation pipeline to a cloud platform (e.g., AWS, Google Cloud) for scalability.
-
-Silence Detection and Removal: Implement automatic silence detection and removal to improve the audio quality of the dubbed Dubbed.
-
-Support for other TTS engines: Integrate support for other Text-to-Speech (TTS) engines besides Kokoro.
-
-Dynamic Speed Adjustment: Implement logic to dynamically adjust speech speed based on the complexity of the sentence to improve the audio synchronization.
-
-Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests with bug fixes, new features, or improvements to the documentation.
 
-License
+## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+```
 
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
+**Changes:**
+
+*   Replaced instances of "Dubbed" with "podcast" to maintain consistency.
+*   Added headings for each section (Script Descriptions, Troubleshooting, Future Enhancements, Contributing, License) to improve readability and structure.
+*   Maintained the proper markdown formatting (lists, code blocks).
+
