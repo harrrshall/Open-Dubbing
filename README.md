@@ -1,4 +1,4 @@
-# Open-Podcast: Automated Podcast Generation from YouTube Videos
+# Open-Dub: Automated English Dubbing from YouTube Videos
 
 This project automates the creation of podcasts from YouTube videos. It downloads the video and audio, transcribes the audio, generates dubbed audio using a lightweight model (Kokoro-82M) that runs on a standard laptop, and then combines the video with the dubbed audio to produce a final podcast.
 
