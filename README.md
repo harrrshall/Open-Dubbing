@@ -26,7 +26,7 @@ Before you begin, ensure you have the following installed:
 
     ```bash
     git clone https://github.com/harrrshall/Open-Dubbing.git
-    cd harrrshall-open-Dubbed
+    cd Open-Dubbing
     ```
 
 2.  **Create a virtual environment (recommended):**
