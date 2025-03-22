@@ -156,11 +156,3 @@ Contributions are welcome! Please feel free to submit pull requests with bug fix
 ## License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
-```
-
-**Changes:**
-
-*   Replaced instances of "Dubbed" with "podcast" to maintain consistency.
-*   Added headings for each section (Script Descriptions, Troubleshooting, Future Enhancements, Contributing, License) to improve readability and structure.
-*   Maintained the proper markdown formatting (lists, code blocks).
-
